@@ -1,0 +1,42 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "light";
+@import "base";
+
+@media (prefers-color-scheme: dark) {
+	@import "dark";
+}
+
+/* Brutalist Canvas Styles */
+canvas {
+	margin: 2em auto;
+	width: 100%;
+	max-width: 800px;
+	height: 400px;
+	display: block;
+	font-size: 2em;
+	line-height: 1.2;
+	font-family: 'JetBrains Mono', monospace;
+	background-color: var(--background-color);
+	border: var(--border-thick);
+	box-shadow: var(--shadow);
+}
+
+/* Override any conflicting styles */
+.post-thumbnail {
+	display: block;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 30px;
+	object-fit: cover;
+	border: var(--border-thick);
+	box-shadow: var(--shadow);
+	transition: all 0.1s ease;
+	
+	&:hover {
+		transform: translate(4px, 4px);
+		box-shadow: var(--shadow-small);
+	}
+}

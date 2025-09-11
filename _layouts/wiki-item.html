@@ -1,0 +1,187 @@
+---
+layout: default
+---
+
+<article class="wiki-item-page">
+  <header class="wiki-item-header">
+    <h1 class="wiki-item-title">{{ page.title }}</h1>
+    {% if page.category %}
+      <div class="wiki-item-category">
+        <span class="category-label">Category:</span>
+        <span class="category-value">{{ page.category | capitalize }}</span>
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="wiki-item-content">
+    {{ content }}
+  </div>
+
+  <footer class="wiki-item-footer">
+    <div class="wiki-item-actions">
+      <a href="{{ '/wiki/' | relative_url }}" class="back-to-wiki">
+        ← Back to Wiki
+      </a>
+    </div>
+  </footer>
+</article>
+
+<style>
+.wiki-item-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wiki-item-header {
+  margin-bottom: 40px;
+  padding: 30px;
+  border: var(--border);
+  background-color: var(--background-secondary);
+  box-shadow: var(--shadow-small);
+}
+
+.wiki-item-title {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 20px 0;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.wiki-item-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.category-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.category-value {
+  color: var(--accent-color);
+  font-size: 16px;
+  padding: 4px 12px;
+  border: var(--border-thin);
+  background-color: var(--background-color);
+}
+
+.wiki-item-content {
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.wiki-item-content h1,
+.wiki-item-content h2,
+.wiki-item-content h3,
+.wiki-item-content h4,
+.wiki-item-content h5,
+.wiki-item-content h6 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.wiki-item-content h2 {
+  font-size: 24px;
+  color: var(--accent-color);
+  border-bottom: var(--border-thin);
+  padding-bottom: 8px;
+}
+
+.wiki-item-content h3 {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.wiki-item-content p {
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.wiki-item-content ul,
+.wiki-item-content ol {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.wiki-item-content li {
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.wiki-item-content strong {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.wiki-item-content a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent-color);
+  transition: all 0.1s ease;
+}
+
+.wiki-item-content a:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+
+.wiki-item-footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: var(--border);
+}
+
+.wiki-item-actions {
+  text-align: center;
+}
+
+.back-to-wiki {
+  display: inline-block;
+  padding: 12px 24px;
+  border: var(--border);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: all 0.1s ease;
+  box-shadow: var(--shadow-small);
+}
+
+.back-to-wiki:hover {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+  color: var(--link-hover-text);
+  background-color: var(--link-hover-bg);
+}
+
+@media (max-width: 768px) {
+  .wiki-item-title {
+    font-size: 28px;
+  }
+  
+  .wiki-item-header {
+    padding: 20px;
+  }
+  
+  .wiki-item-category {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+</style>

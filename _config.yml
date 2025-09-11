@@ -1,0 +1,30 @@
+title: 'IML'
+description: "Interactive Machines Lab"
+baseurl: ""
+url: ""
+logo: "/assets/images/"
+2025logo: "/assets/images/logo-l.png"
+
+header_pages:
+  #- index.md
+  - about.md
+  - workshops.md 
+  - people.md
+  - projects.md
+  - wiki.md
+
+style: light
+
+footer: 'follow us on <a href="https://www.instagram.com/imachineslab/">Instagram</a>'
+
+# Collections
+collections:
+  wiki:
+    output: true
+    permalink: /wiki/:name/
+
+# Build settings
+markdown: kramdown
+remote_theme: b2a3e8/jekyll-theme-console
+plugins:
+  - jekyll-seo-tag
