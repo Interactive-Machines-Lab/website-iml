@@ -19,22 +19,10 @@
 			background-color: white;
 		}
 	</style>
-    <script src="path-to-ascii-library.js"></script>
-    <script src="assets/js/ascii/run.js"></script>
+    <!-- ASCII scripts removed -->
 </head>
 <body>
 	<pre></pre>
-	<script type="module">
-		import { run } from "{{ '/assets/js/ascii/run.js' | relative_url }}";
-		import * as prog0 from "{{ '/assets/js/script/logo.js' | relative_url }}";
-
-		const pre = document.querySelectorAll('pre');
-		run(prog0, { element: pre[0] }).catch(errorHandler);
-
-		function errorHandler(e) {
-			console.warn(e.message);
-			console.log(e.error);
-		}
-	</script>
+	<!-- ASCII animation removed -->
 </body>
 </html>
