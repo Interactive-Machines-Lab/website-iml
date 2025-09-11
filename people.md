@@ -15,12 +15,10 @@ permalink: /people
 ---------------
 #### ASSISTANTS
 
-
 {% include post-gallery.html category="assistant" %}
 
 ---------------
-## STUDENTS
-
+#### STUDENTS
 
 {% include post-gallery.html category="student" %}
 
