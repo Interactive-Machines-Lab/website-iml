@@ -176,7 +176,7 @@
       
       <li style="width: {{ item_width }};">
         <a href="{{ link_url }}" title="{{ filename }}" {% if is_external_link %}target="_blank" rel="noopener"{% endif %}>
-          <img src="{{ site.url }}{{ file.path | relative_url }}" 
+          <img src="{{ file.path | relative_url }}" 
                alt="{{ filename }}" 
                title="{{ filename }}"
                {% if image_size and image_size contains 'px' %}style="max-height: {{ image_size }};"{% endif %} />

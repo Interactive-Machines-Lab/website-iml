@@ -6,7 +6,7 @@ caption: Luis Pacheco
 permalink: /luis-pacheco
 project: true
 category: director
-thumbnail: assets/images/people/lp.jpg
+thumbnail: /assets/images/people/lp.jpg
 ---
 ![{{ page.title }}]({{ page.thumbnail }}){: class="post-thumbnail" }
 
