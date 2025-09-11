@@ -10,7 +10,7 @@ thumbnail: /assets/images/workshops/acadia25-workshop_forcesinclay.png
 
 ---
 
-![{{ page.title }}]({{ page.thumbnail }}){: class="post-thumbnail" }
+![{{ page.title }}]({{ page.thumbnail | relative_url }}){: class="post-thumbnail" }
 
 # Forces in Clay: Designing Reef Habitats with 3D Graphic Statics and Clay 3D Printing
 

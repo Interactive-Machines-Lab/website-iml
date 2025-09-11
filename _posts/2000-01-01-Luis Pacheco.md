@@ -8,7 +8,7 @@ project: true
 category: director
 thumbnail: /assets/images/people/lp.jpg
 ---
-![{{ page.title }}]({{ page.thumbnail }}){: class="post-thumbnail" }
+![{{ page.title }}]({{ page.thumbnail | relative_url }}){: class="post-thumbnail" }
 
 ## [Luis Pacheco](https://www.luigipacheco.com)
 Assistant Professor and Director of the Interactive Machines Lab, FAU
