@@ -1,0 +1,212 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<div class="publications-content">
+  {% assign publications = site.posts | where: "categories", "publications" %}
+  
+  {% if publications.size > 0 %}
+    <div class="publications-list">
+      {% for publication in publications %}
+        <div class="publication-item">
+          <div class="publication-header">
+            <h2 class="publication-title">
+              <a href="{{ publication.url | relative_url }}">{{ publication.title }}</a>
+            </h2>
+            {% if publication.date %}
+              <div class="publication-date">{{ publication.date | date: "%B %Y" }}</div>
+            {% endif %}
+          </div>
+          
+          {% if publication.excerpt %}
+            <div class="publication-excerpt">
+              {{ publication.excerpt | strip_html | truncate: 300 }}
+            </div>
+          {% endif %}
+          
+          {% if publication.authors %}
+            <div class="publication-authors">
+              <strong>Authors:</strong> {{ publication.authors }}
+            </div>
+          {% endif %}
+          
+          {% if publication.venue %}
+            <div class="publication-venue">
+              <strong>Venue:</strong> {{ publication.venue }}
+            </div>
+          {% endif %}
+          
+          <div class="publication-actions">
+            <a href="{{ publication.url | relative_url }}" class="publication-link">Read More</a>
+            {% if publication.pdf %}
+              <a href="{{ publication.pdf }}" class="publication-pdf" target="_blank">Download PDF</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-content">
+      <p>No publications found. Check back later for updates.</p>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+.publications-content {
+  margin-top: 30px;
+}
+
+.publications-list {
+  display: grid;
+  gap: 30px;
+}
+
+.publication-item {
+  border: var(--border);
+  padding: 30px;
+  background-color: var(--background-secondary);
+  box-shadow: var(--shadow-small);
+  transition: all 0.1s ease;
+}
+
+.publication-item:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow);
+}
+
+.publication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.publication-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex: 1;
+  min-width: 200px;
+}
+
+.publication-title a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+
+.publication-title a:hover {
+  color: var(--accent-color);
+}
+
+.publication-date {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  padding: 8px 16px;
+  border: var(--border-thin);
+  background-color: var(--background-color);
+  white-space: nowrap;
+}
+
+.publication-excerpt {
+  margin: 0 0 20px 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.publication-authors,
+.publication-venue {
+  margin: 0 0 10px 0;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.publication-authors strong,
+.publication-venue strong {
+  color: var(--accent-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.publication-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.publication-link,
+.publication-pdf {
+  display: inline-block;
+  padding: 10px 20px;
+  border: var(--border-thin);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+  transition: all 0.1s ease;
+}
+
+.publication-link:hover,
+.publication-pdf:hover {
+  transform: translate(1px, 1px);
+  box-shadow: var(--shadow-small);
+  color: var(--link-hover-text);
+  background-color: var(--link-hover-bg);
+}
+
+.publication-pdf {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border-color: var(--accent-color);
+}
+
+.publication-pdf:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.no-content {
+  text-align: center;
+  padding: 40px;
+  border: var(--border);
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .publication-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .publication-title {
+    font-size: 20px;
+  }
+  
+  .publication-actions {
+    flex-direction: column;
+  }
+  
+  .publication-link,
+  .publication-pdf {
+    text-align: center;
+  }
+}
+</style>

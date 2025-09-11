@@ -166,8 +166,12 @@ footer {
   gap: 30px;
 }
 
-.footer-logo {
+.footer-logos {
   flex: 0 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-direction: row;
 }
 
 .footer-link {
@@ -185,8 +189,9 @@ footer {
 }
 
 .footer-logo-img {
-  max-width: 120px;
-  height: auto;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
   display: block;
 }
 
@@ -217,6 +222,11 @@ footer {
     flex-direction: column;
     text-align: center;
     gap: 20px;
+  }
+  
+  .footer-logos {
+    justify-content: center;
+    flex-wrap: nowrap;
   }
   
   .footer-text {
