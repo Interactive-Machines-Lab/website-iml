@@ -11,19 +11,68 @@
   {% endif %}
 
   {%- if site.listen_for_clients_preferred_style -%}
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/main.css" | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ "assets/main.css" | relative_url }}">
   {%- else -%}
     {%- if site.style == 'light' -%}
-      <link rel="stylesheet" type="text/css" href="{{ "/assets/main-light.css" | relative_url }}">
+      <link rel="stylesheet" type="text/css" href="{{ "assets/main-light.css" | relative_url }}">
     {%- elsif site.style == 'hacker' -%}
-      <link rel="stylesheet" type="text/css" href="{{ "/assets/main-hacker.css" | relative_url }}">
+      <link rel="stylesheet" type="text/css" href="{{ "assets/main-hacker.css" | relative_url }}">
     {%- else -%}
-      <link rel="stylesheet" type="text/css" href="{{ "/assets/main-dark.css" | relative_url }}">
+      <link rel="stylesheet" type="text/css" href="{{ "assets/main-dark.css" | relative_url }}">
     {%- endif -%}
   {%- endif -%}
 
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuNav = document.querySelector('.menu-nav');
+      
+      if (menuToggle && menuNav) {
+        menuToggle.addEventListener('click', function() {
+          menuNav.classList.toggle('active');
+          
+          // Animate hamburger lines
+          const lines = menuToggle.querySelectorAll('.hamburger-line');
+          if (menuNav.classList.contains('active')) {
+            lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            lines[1].style.opacity = '0';
+            lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+          } else {
+            lines[0].style.transform = 'none';
+            lines[1].style.opacity = '1';
+            lines[2].style.transform = 'none';
+          }
+        });
+        
+        // Close menu when clicking on a link
+        const menuLinks = menuNav.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            menuNav.classList.remove('active');
+            const lines = menuToggle.querySelectorAll('.hamburger-line');
+            lines[0].style.transform = 'none';
+            lines[1].style.opacity = '1';
+            lines[2].style.transform = 'none';
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!menuToggle.contains(event.target) && !menuNav.contains(event.target)) {
+            menuNav.classList.remove('active');
+            const lines = menuToggle.querySelectorAll('.hamburger-line');
+            lines[0].style.transform = 'none';
+            lines[1].style.opacity = '1';
+            lines[2].style.transform = 'none';
+          }
+        });
+      }
+    });
+  </script>
   
 </head>

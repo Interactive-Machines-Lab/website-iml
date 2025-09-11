@@ -1,9 +1,9 @@
 title: 'IML'
 description: "Interactive Machines Lab"
-baseurl: "/website"
+baseurl: "" # Set to "/website" for GitHub Pages, "" for local development
 url: "https://interactive-machines-lab.github.io"
-logo: "/assets/images/"
-2025logo: "/assets/images/logo-l.png"
+logo: "assets/images/"
+2025logo: "assets/images/logo-l.png"
 
 header_pages:
   #- index.md

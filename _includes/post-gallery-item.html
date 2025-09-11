@@ -41,7 +41,7 @@
 {% endif %}
 
 <li style="width: var(--gallery-item-width);">
-  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">
+  <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">
     <img src="{{ image_src }}" 
          alt="{{ post.title }}" 
          title="{{ post.title }}"

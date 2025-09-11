@@ -6,7 +6,7 @@ caption: Forces in Clay Workshop
 permalink: /forces-in-clay
 project: true
 category: workshop
-thumbnail: /assets/images/workshops/acadia25-workshop_forcesinclay.png
+thumbnail: assets/images/workshops/acadia25-workshop_forcesinclay.png
 
 ---
 
@@ -74,4 +74,4 @@ Yoana is a Senior Computational Designer at HKS LINE with a specialization in la
 
 ## Workshop Gallery
 
-{% include image-gallery.html folder="/assets/images/workshops/forces-in-clay" item_width="30%" show_caption="false" %}
+{% include image-gallery.html folder="assets/images/workshops/forces-in-clay" item_width="30%" show_caption="false" %}
