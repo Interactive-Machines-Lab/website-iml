@@ -4,26 +4,51 @@ layout: page
 permalink: /about
 ---
 
-# Interactive Machines Lab
+# Interactive Machines Lab (IML)
 
-**Director:** Luis Pacheco
+**Florida Atlantic University**  
+**Director:** Luis Arturo Pacheco
 
-We design systems that make machines easier to work with, live with, and create with.
+## About
 
-## What We Do
-
-The Interactive Machines Lab explores how intelligent systems can interact with people through physical presence, spatial awareness, and real-time behavior. We focus on making machines more intuitive—whether they're tools, collaborators, or creative partners. Our work brings together robotics, AI, design, and interaction to prototype systems that feel responsive, reliable, and expressive in everyday contexts.
+The Interactive Machines Lab (IML) researches new relationships between humans and machines in the act of making.
+We develop intelligent fabrication systems that connect design, AI, and robotics to create machines that understand material, space, and intent.
+Our work integrates computational design, physical AI, and interactive fabrication to transform fabrication into an adaptive, creative, and responsive process—advancing how we design and build in the age of intelligent tools.
 
 ## Research Areas
 
-### 1. Physical AI
+### 1. Interactive Fabrication
 
-We give AI a physical layer connecting models like language, diffusion, and control systems to motion, expression, and embodied behavior in the real world.
+We develop real-time, design-to-fabrication workflows that merge creative exploration with robotic precision.
+Our goal is to build procedural systems that link digital models directly to machines, allowing form, material, and motion to evolve together in one continuous process.
 
-### 2. Spatial User Interfaces (SUI)
+**Focus Topics**
 
-We design interfaces that operate in physical space beyond screens. These systems use motion, positioning, and spatial context to enable direct, dynamic interaction with machines and environments.
+- Procedural design workflows for robotic 3D printing, CNC, and hybrid fabrication
+- Real-time toolpath generation and adaptive material control
+- Parametric fabrication systems for architectural and product-scale applications
+- Integration of sensors for live feedback and performance tuning
 
-### 3. Procedural Robot Control
+### 2. Physical AI
 
-We develop real-time, generative control systems for robots. Using animation logic, simulation, and custom tooling, we enable flexible, improvisational machine behavior for tasks in fabrication, performance, and interaction.
+We study how machines can learn from data, sensing, and human input to adapt intelligently to new environments and materials.
+The aim is to create fabrication systems that respond to uncertainty, adjust in real time, and improve through experience.
+
+**Focus Topics**
+
+- Simulation-to-reality learning for robotic fabrication
+- Computer vision and machine learning for adaptive control
+- Self-calibrating systems for variable-scale fabrication
+- Sensor networks and data-driven material intelligence
+
+### 3. Spatial Interfaces
+
+We design new ways for humans to interact with machines in space—extending design thinking into immersive, real-time environments.
+Interfaces are treated not as screens, but as spatial systems where design, data, and motion converge.
+
+**Focus Topics**
+
+- XR and mixed reality for interactive robot programming
+- Multi-sensory feedback through gesture, light, and sound
+- Real-time visualization of fabrication processes
+- Interactive systems for education, performance, and creative production

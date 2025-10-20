@@ -4,6 +4,9 @@ layout: home
 permalink: /
 ---
 
-# Interactive Machines Lab
+# Interactive Machines Lab (IML)
 
-Welcome to the Interactive Machines Lab. We explore the intersection of technology, design, and human interaction.
+**Florida Atlantic University**  
+**Director:** Luis Arturo Pacheco
+
+Welcome to the Interactive Machines Lab. We research new relationships between humans and machines in the act of making.
