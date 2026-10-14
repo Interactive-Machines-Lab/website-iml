@@ -8,7 +8,7 @@ caption: "Animating Robots"
 event: "MAD Arts"
 dates: "September 19, 2026"
 location: "MAD Arts, Dania Beach, Florida"
-instructors: "Luis Arturo Pacheco (Interactive Machines Lab, FAU)"
+instructors: "Luis Arturo Pacheco (Interactive Machines Lab, FAU) and Amir B. Jahanbin"
 excerpt: "A hands-on workshop at MAD Arts on controlling industrial robot arms with animation tools in Blender and Animaquina."
 ---
 A hands-on workshop for artists, designers, architects, animators and creative technologists on controlling industrial robot arms with the tools of animation. No robotics background was required.
