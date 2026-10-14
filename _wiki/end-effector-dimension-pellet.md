@@ -5,8 +5,6 @@ excerpt: "High-capacity pellet extruder for large-scale robotic 3D printing, des
 layout: wiki-item
 ---
 
-# Massive Dimension Pellet Extruder MDPH2
-
 ## Specifications
 
 - **Nozzle Diameter**: 3mm, 6mm, 12mm options

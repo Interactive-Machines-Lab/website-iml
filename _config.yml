@@ -2,19 +2,17 @@ title: 'IML'
 description: "Interactive Machines Lab"
 baseurl: "" # Set to "/website" for GitHub Pages, "" for local development
 url: "https://interactive-machines-lab.github.io"
-logo: "assets/images/"
-2025logo: "assets/images/logo-l.png"
+logo: "assets/images/iml-mark.svg" # IML mark from the IML design system
 
 header_pages:
   #- index.md
   - about.md
+  - news.md
   - workshops.md 
   - people.md
   - projects.md
   - publications.md
   - wiki.md
-
-style: light
 
 footer: 'follow us on <a href="https://www.instagram.com/imachineslab/">Instagram</a>'
 
@@ -29,3 +27,16 @@ markdown: kramdown
 remote_theme: b2a3e8/jekyll-theme-console
 plugins:
   - jekyll-seo-tag
+
+# Repo docs and scripts that should not be published with the site
+exclude:
+  - README.md
+  - DEPLOYMENT.md
+  - IMAGE_GALLERY_USAGE.md
+  - POST_GALLERY_USAGE.md
+  - LICENSE.txt
+  - deploy-github.bat
+  - deploy-local.bat
+  - jekyll-theme-console.gemspec
+  - Gemfile
+  - Gemfile.lock

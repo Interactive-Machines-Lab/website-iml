@@ -1,0 +1,29 @@
+# Sections of the People page, in display order.
+#
+# Each person is a post in _posts/ with `layout: person` and
+# `category:` set to one of the ids below. A section with nobody in it
+# is hidden. Within a section, people are sorted by their `order:` value.
+#
+#   id        the post category
+#   title     section heading on the People page
+#   singular  label shown on that person's own page
+
+- id: director
+  title: Director
+  singular: Director
+
+- id: researcher
+  title: Researchers
+  singular: Researcher
+
+- id: assistant
+  title: Assistants
+  singular: Assistant
+
+- id: student
+  title: Students
+  singular: Student
+
+- id: affiliated-researcher
+  title: Affiliated Researchers
+  singular: Affiliated Researcher

@@ -5,11 +5,9 @@ categories: [publications]
 authors: "Luis Pacheco"
 venue: "ACADIA 2024: Designing Change"
 excerpt: "A toolkit designed to democratize architectural robotics through intuitive interactive toolpathing and modular wireless hardware framework for simplified integration of sensors, actuators, and end-effectors."
-pdf: "/assets/papers/acadia24_v2_89.pdf"
+pdf: "/assets/publications/acadia24_v2_89.pdf"
 layout: post
 ---
-
-# Animaquina
 
 ## Abstract
 

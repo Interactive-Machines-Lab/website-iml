@@ -1,17 +1,26 @@
-<footer class="brutalist-footer">
-  <div class="footer-content">
-    <div class="footer-logos">
-      <a href="https://www.fau.edu" target="_blank" rel="noopener noreferrer" class="footer-link">
-        <img src="{{ 'assets/images/florida-atlantic-logo.png' | relative_url }}" alt="Florida Atlantic University" class="footer-logo-img">
-      </a>
-      <a href="https://www.fau.edu/artsandletters/architecture/" target="_blank" rel="noopener noreferrer" class="footer-link">
-        <img src="{{ 'assets/images/fausoalogo.jpg' | relative_url }}" alt="FAU SOA" class="footer-logo-img">
-      </a>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <img class="brand__mark" src="{{ 'assets/images/iml-mark.svg' | relative_url }}" width="40" height="40" alt="">
+      <div>
+        <p class="site-footer__name">Interactive Machines Lab</p>
+        <p class="muted">Florida Atlantic University · School of Architecture</p>
+      </div>
     </div>
-    <div class="footer-text">
-      <p class="footer-main">{{ site.footer }}</p>
-      <p class="footer-contact">CONTACT: LPACHECOALCALA@FAU.EDU</p>
+
+    <div class="site-footer__links">
+      <p class="label muted">Contact</p>
+      <p><a href="mailto:lpachecoalcala@fau.edu">lpachecoalcala@fau.edu</a></p>
+      <p>{{ site.footer }}</p>
+    </div>
+
+    <div class="site-footer__logos">
+      <a href="https://www.fau.edu" target="_blank" rel="noopener noreferrer" class="logo-tile">
+        <img src="{{ 'assets/images/florida-atlantic-logo.png' | relative_url }}" alt="Florida Atlantic University">
+      </a>
+      <a href="https://www.fau.edu/artsandletters/architecture/" target="_blank" rel="noopener noreferrer" class="logo-tile">
+        <img src="{{ 'assets/images/fausoalogo.jpg' | relative_url }}" alt="FAU School of Architecture">
+      </a>
     </div>
   </div>
 </footer>
-

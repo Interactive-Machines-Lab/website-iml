@@ -1,24 +1,25 @@
 {%- assign page_paths = site.header_pages | default: default_paths -%}
-<header>
-  <div class="menu">
-    <!-- Left-aligned title -->
-    <a href="{{site.url}}{{site.baseurl}}" class="menu-title">{{ site.title }}</a>
-    
-    <!-- Mobile hamburger button -->
-    <button class="menu-toggle" aria-label="Toggle navigation menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-    
-    <!-- Right-aligned menu items -->
-    <ul class="menu-nav">
-      {%- for path in page_paths -%}
-        {%- assign my_page = site.pages | where: "path", path | first -%}
-        {%- if my_page.title -%}
-          <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-        {%- endif -%}
-      {%- endfor -%}
-    </ul>
+{%- assign current_url = page.nav | default: page.url -%}
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a href="{{ '/' | relative_url }}" class="brand">
+      <img class="brand__mark" src="{{ 'assets/images/iml-mark.svg' | relative_url }}" width="40" height="40" alt="">
+      <span class="brand__name">Interactive<br>Machines Lab</span>
+    </a>
+
+    <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title -%}
+            {%- assign section_url = my_page.url | remove_first: "/" | split: "/" | first | prepend: "/" -%}
+            {%- assign current_section = current_url | remove_first: "/" | split: "/" | first | prepend: "/" -%}
+            <li><a href="{{ my_page.url | relative_url }}"{% if my_page.url == page.url %} aria-current="page"{% elsif section_url == current_section %} aria-current="true"{% endif %}>{{ my_page.title | escape }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
   </div>
 </header>

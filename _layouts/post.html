@@ -1,245 +1,61 @@
 ---
 layout: default
 ---
+{%- assign section = page.categories | first -%}
+{%- case section -%}
+  {%- when "news" -%}
+    {%- assign back_url = "/news/" -%}{%- assign back_label = "News" -%}{%- assign code = "IML/07" -%}
+  {%- when "publications" -%}
+    {%- assign back_url = "/publications/" -%}{%- assign back_label = "Publications" -%}{%- assign code = "IML/05" -%}
+  {%- when "projects" -%}
+    {%- assign back_url = "/projects" -%}{%- assign back_label = "Projects" -%}{%- assign code = "IML/04" -%}
+  {%- when "workshop", "upcoming-workshop", "past-workshop" -%}
+    {%- assign back_url = "/workshops/" -%}{%- assign back_label = "Workshops" -%}{%- assign code = "IML/02" -%}
+  {%- else -%}
+    {%- assign back_url = "/" -%}{%- assign back_label = "Home" -%}{%- assign code = nil -%}
+{%- endcase -%}
+<article class="entry">
+  <a class="backlink" href="{{ back_url | relative_url }}">← {{ back_label }}</a>
 
-<article class="post-page">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    
-    {% if page.date %}
-      <div class="post-date">{{ page.date | date: "%B %d, %Y" }}</div>
-    {% endif %}
-    
-    {% if page.authors %}
-      <div class="post-authors">
-        <strong>Authors:</strong> {{ page.authors }}
-      </div>
-    {% endif %}
-    
-    {% if page.venue %}
-      <div class="post-venue">
-        <strong>Venue:</strong> {{ page.venue }}
-      </div>
-    {% endif %}
-    
-    {% if page.pdf %}
-      <div class="post-actions">
-        <a href="{{ page.pdf }}" class="post-pdf" target="_blank">Download PDF</a>
-      </div>
-    {% endif %}
+  <header class="entry__header">
+    {% include eyebrow.html code=code label=back_label %}
+    <h1 class="entry__title">{{ page.title }}</h1>
+
+    {%- if page.date or page.authors or page.venue or page.doi or page.event %}
+    <dl class="entry__meta">
+      {%- if page.event %}<dt>Event</dt><dd>{{ page.event }}</dd>{% endif %}
+      {%- if page.dates %}<dt>Dates</dt><dd>{{ page.dates }}</dd>{% endif %}
+      {%- if page.location %}<dt>Location</dt><dd>{{ page.location }}</dd>{% endif %}
+      {%- if page.instructors %}<dt>Instructors</dt><dd>{{ page.instructors }}</dd>{% endif %}
+      {%- if page.award %}<dt>Award</dt><dd><span class="chip">{{ page.award }}</span></dd>{% endif %}
+      {%- if page.authors %}<dt>Authors</dt><dd>{{ page.authors }}</dd>{% endif %}
+      {%- if page.venue %}<dt>Venue</dt><dd>{{ page.venue }}</dd>{% endif %}
+      {%- if section == "publications" and page.date %}<dt>Date</dt><dd>{{ page.date | date: "%B %Y" }}</dd>{% endif %}
+      {%- if section == "news" and page.date %}<dt>Date</dt><dd><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time></dd>{% endif %}
+      {%- if page.doi %}<dt>DOI</dt><dd><a href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener">{{ page.doi }}</a></dd>{% endif %}
+    </dl>
+    {%- endif %}
+
+    {%- if page.pdf %}
+    <p class="btn-row">
+      <a href="{{ page.pdf | relative_url }}" class="btn" target="_blank" rel="noopener">Download PDF</a>
+    </p>
+    {%- endif %}
   </header>
 
-  <div class="post-content">
+  {%- assign show_figure = false -%}
+  {%- if page.thumbnail -%}
+    {%- case section -%}
+      {%- when "news", "past-workshop", "upcoming-workshop" -%}{%- assign show_figure = true -%}
+    {%- endcase -%}
+  {%- endif %}
+  {%- if show_figure %}
+  <figure class="entry__figure frame">
+    <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.thumbnail_alt | default: '' }}">
+  </figure>
+  {%- endif %}
+
+  <div class="prose">
     {{ content }}
   </div>
-
-  <footer class="post-footer">
-    <div class="post-navigation">
-      <a href="{{ '/publications/' | relative_url }}" class="back-to-publications">
-        ← Back to Publications
-      </a>
-    </div>
-  </footer>
 </article>
-
-<style>
-.post-page {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.post-header {
-  margin-bottom: 40px;
-  padding: 30px;
-  border: var(--border);
-  background-color: var(--background-secondary);
-  box-shadow: var(--shadow-small);
-}
-
-.post-title {
-  font-size: 36px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 20px 0;
-  color: var(--text-color);
-  line-height: 1.2;
-}
-
-.post-date {
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent-color);
-  margin-bottom: 15px;
-}
-
-.post-authors,
-.post-venue {
-  margin: 0 0 10px 0;
-  color: var(--text-color);
-  font-size: 16px;
-}
-
-.post-authors strong,
-.post-venue strong {
-  color: var(--accent-color);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.post-actions {
-  margin-top: 20px;
-}
-
-.post-pdf {
-  display: inline-block;
-  padding: 12px 24px;
-  border: var(--border);
-  background-color: var(--accent-color);
-  color: var(--background-color);
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 14px;
-  transition: all 0.1s ease;
-}
-
-.post-pdf:hover {
-  transform: translate(1px, 1px);
-  box-shadow: var(--shadow-small);
-  background-color: var(--text-color);
-}
-
-.post-content {
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.post-content h5,
-.post-content h6 {
-  margin-top: 30px;
-  margin-bottom: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.post-content h2 {
-  font-size: 24px;
-  color: var(--accent-color);
-  border-bottom: var(--border-thin);
-  padding-bottom: 8px;
-}
-
-.post-content h3 {
-  font-size: 20px;
-  color: var(--text-color);
-}
-
-.post-content p {
-  margin-bottom: 15px;
-  color: var(--text-color);
-}
-
-.post-content ul,
-.post-content ol {
-  margin-bottom: 20px;
-  padding-left: 20px;
-}
-
-.post-content li {
-  margin-bottom: 8px;
-  color: var(--text-color);
-}
-
-.post-content strong {
-  font-weight: 700;
-  color: var(--text-color);
-}
-
-.post-content a {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px solid var(--accent-color);
-  transition: all 0.1s ease;
-}
-
-.post-content a:hover {
-  background-color: var(--accent-color);
-  color: var(--background-color);
-  padding: 2px 4px;
-  margin: -2px -4px;
-}
-
-.post-content code {
-  background-color: var(--background-secondary);
-  padding: 2px 6px;
-  border: var(--border-thin);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-}
-
-.post-content pre {
-  background-color: var(--background-secondary);
-  padding: 20px;
-  border: var(--border);
-  overflow-x: auto;
-  margin: 20px 0;
-}
-
-.post-content pre code {
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.post-footer {
-  margin-top: 40px;
-  padding: 20px 0;
-  border-top: var(--border);
-}
-
-.post-navigation {
-  text-align: center;
-}
-
-.back-to-publications {
-  display: inline-block;
-  padding: 12px 24px;
-  border: var(--border);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  transition: all 0.1s ease;
-  box-shadow: var(--shadow-small);
-}
-
-.back-to-publications:hover {
-  transform: translate(1px, 1px);
-  box-shadow: none;
-  color: var(--link-hover-text);
-  background-color: var(--link-hover-bg);
-}
-
-@media (max-width: 768px) {
-  .post-title {
-    font-size: 28px;
-  }
-  
-  .post-header {
-    padding: 20px;
-  }
-}
-</style>

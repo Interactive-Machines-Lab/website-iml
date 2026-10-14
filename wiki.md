@@ -2,6 +2,8 @@
 title: Wiki
 layout: wiki
 permalink: /wiki/
+code: IML/06
+eyebrow: Equipment
 ---
 
 # Equipment Wiki

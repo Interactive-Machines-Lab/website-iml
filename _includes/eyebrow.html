@@ -1,0 +1,5 @@
+{%- comment -%}
+  Eyebrow from the IML design system: a short lime dash, then [CODE/NN] · SECTION.
+  Parameters: code (e.g. "IML/03", optional), label (e.g. "People").
+{%- endcomment -%}
+<p class="eyebrow"><span class="eyebrow__dash" aria-hidden="true"></span><span>{% if include.code %}[{{ include.code }}] · {% endif %}{{ include.label }}</span></p>

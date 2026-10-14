@@ -1,0 +1,31 @@
+{%- comment -%}
+  One section of the People page.
+  Parameter: group, an entry from _data/people.yml ({id, title, singular}).
+  Lists every post whose category is group.id, sorted by `order`. Renders
+  nothing when the section is empty.
+{%- endcomment -%}
+{%- assign group = include.group -%}
+{%- assign members = site.posts | where_exp: "post", "post.categories contains group.id" | sort: "order" -%}
+{%- if members.size > 0 -%}
+<section class="people-group" id="{{ group.id }}" aria-labelledby="{{ group.id }}-title">
+<div class="section-head">
+<h2 id="{{ group.id }}-title">{{ group.title }}</h2>
+<span class="section-head__count" aria-label="{{ members.size }} {% if members.size == 1 %}person{% else %}people{% endif %}">{% if members.size < 10 %}0{% endif %}{{ members.size }}</span>
+</div>
+<ul class="people-grid">
+{%- for person in members %}
+<li>
+<a class="person-card" href="{{ person.url | relative_url }}">
+<span class="person-card__photo">{% if person.thumbnail %}<img class="portrait" src="{{ person.thumbnail | relative_url }}" alt="" loading="lazy">{% endif %}</span>
+<span class="person-card__body">
+<span class="person-card__name">{{ person.title }}</span>
+{%- if person.role %}
+<span class="person-card__role">{{ person.role }}</span>
+{%- endif %}
+</span>
+</a>
+</li>
+{%- endfor %}
+</ul>
+</section>
+{%- endif -%}

@@ -5,11 +5,9 @@ categories: [publications]
 authors: "Luis Pacheco"
 venue: "SIGraDi 2023: Accelerated Landscapes"
 excerpt: "An open-source toolkit designed to simplify hardware integration, motion control, tool pathing, and interfacing with robotic arms using an Internet of Things (IoT) approach."
-pdf: "/assets/papers/igradi2023_22.pdf"
+pdf: "/assets/publications/sigradi2023_22.pdf"
 layout: post
 ---
-
-# BIRT: An Open-Source Integration Toolkit for Architectural Robotics
 
 ## Abstract
 

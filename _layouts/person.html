@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{%- assign group_id = page.categories | first -%}
+{%- assign group = site.data.people | where: "id", group_id | first -%}
+<article class="person">
+  <a class="backlink" href="{{ '/people/' | relative_url }}">← People</a>
+
+  <div class="person__grid">
+    {%- if page.thumbnail %}
+    <figure class="person__photo frame">
+      <img class="portrait" src="{{ page.thumbnail | relative_url }}" alt="Portrait of {{ page.title }}">
+    </figure>
+    {%- endif %}
+
+    <div class="person__main">
+      {% include eyebrow.html code="IML/03" label=group.singular %}
+      <h1 class="person__name">{{ page.title }}</h1>
+      {%- if page.role %}
+      <p class="person__role">{{ page.role }}</p>
+      {%- endif %}
+
+      {%- if page.website or page.email %}
+      <p class="btn-row person__links">
+        {%- if page.website %}
+        <a class="btn" href="{{ page.website }}" target="_blank" rel="noopener">Website ↗</a>
+        {%- endif %}
+        {%- if page.email %}
+        <a class="btn" href="mailto:{{ page.email }}">{{ page.email }}</a>
+        {%- endif %}
+      </p>
+      {%- endif %}
+
+      <div class="prose person__bio">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</article>

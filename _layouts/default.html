@@ -4,19 +4,33 @@
   {%- include head.html -%}
 
   <body>
-    
-    <div class="container">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site">
 
       {%- include header.html -%}
 
-    <main>
-      {{ content }}
-      
-    </main>
+      <main id="main" class="site-main">
+        <div class="wrap">
+          {{ content }}
+        </div>
+      </main>
 
-    {%- include footer.html -%}
+      {%- include footer.html -%}
 
     </div>
-    <!-- <script src="{{ '/assets/js/gallery-shuffle.js' | relative_url }}"></script> -->
+
+    <script>
+      // Mobile menu toggle
+      (function () {
+        var toggle = document.querySelector('.nav-toggle');
+        var nav = document.getElementById('site-nav');
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggle.textContent = open ? 'Close' : 'Menu';
+        });
+      })();
+    </script>
   </body>
 </html>

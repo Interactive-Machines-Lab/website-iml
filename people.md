@@ -1,25 +1,17 @@
 ---
 title: people
 layout: page
-permalink: /people
+permalink: /people/
+code: IML/03
+eyebrow: People
 ---
-# PEOPLE
-## DIRECTOR 
+# People
 
+{% comment %}
+  Sections come from _data/people.yml. To add someone, create a post in
+  _posts/ with `layout: person` and `category:` set to a section id.
+{% endcomment %}
 
-{% include post-gallery.html category="director" gallery_item_width="25%" %}
----------------
-#### RESEARCHERS
-
-{% include post-gallery.html category="researcher" %}
----------------
-#### ASSISTANTS
-
-{% include post-gallery.html category="assistant" %}
-
----------------
-#### STUDENTS
-
-{% include post-gallery.html category="student" %}
-
----------------
+{% for group in site.data.people %}
+{% include people-section.html group=group %}
+{% endfor %}

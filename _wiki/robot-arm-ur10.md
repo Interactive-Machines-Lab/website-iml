@@ -5,8 +5,6 @@ excerpt: "6-axis collaborative robot arm with 10kg payload capacity, perfect for
 layout: wiki-item
 ---
 
-# Universal Robots UR10 Robot Arm
-
 ## Specifications
 
 - **Payload**: 10kg

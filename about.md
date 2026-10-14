@@ -2,6 +2,8 @@
 title: about
 layout: page
 permalink: /about
+code: IML/01
+eyebrow: About
 ---
 
 # Interactive Machines Lab (IML)
@@ -17,7 +19,11 @@ Our work integrates computational design, physical AI, and interactive fabricati
 
 ## Research Areas
 
-### 1. Interactive Fabrication
+<div class="area" id="interactive-fabrication" markdown="1">
+<p class="area__num" aria-hidden="true">01</p>
+<div class="area__body" markdown="1">
+
+### Interactive Fabrication
 
 We develop real-time, design-to-fabrication workflows that merge creative exploration with robotic precision.
 Our goal is to build procedural systems that link digital models directly to machines, allowing form, material, and motion to evolve together in one continuous process.
@@ -29,7 +35,14 @@ Our goal is to build procedural systems that link digital models directly to mac
 - Parametric fabrication systems for architectural and product-scale applications
 - Integration of sensors for live feedback and performance tuning
 
-### 2. Physical AI
+</div>
+</div>
+
+<div class="area" id="physical-ai" markdown="1">
+<p class="area__num" aria-hidden="true">02</p>
+<div class="area__body" markdown="1">
+
+### Physical AI
 
 We study how machines can learn from data, sensing, and human input to adapt intelligently to new environments and materials.
 The aim is to create fabrication systems that respond to uncertainty, adjust in real time, and improve through experience.
@@ -41,7 +54,14 @@ The aim is to create fabrication systems that respond to uncertainty, adjust in 
 - Self-calibrating systems for variable-scale fabrication
 - Sensor networks and data-driven material intelligence
 
-### 3. Spatial Interfaces
+</div>
+</div>
+
+<div class="area" id="spatial-interfaces" markdown="1">
+<p class="area__num" aria-hidden="true">03</p>
+<div class="area__body" markdown="1">
+
+### Spatial Interfaces
 
 We design new ways for humans to interact with machines in space—extending design thinking into immersive, real-time environments.
 Interfaces are treated not as screens, but as spatial systems where design, data, and motion converge.
@@ -52,3 +72,6 @@ Interfaces are treated not as screens, but as spatial systems where design, data
 - Multi-sensory feedback through gesture, light, and sound
 - Real-time visualization of fabrication processes
 - Interactive systems for education, performance, and creative production
+
+</div>
+</div>

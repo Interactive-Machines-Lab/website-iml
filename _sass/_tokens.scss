@@ -1,0 +1,42 @@
+/**
+ * Interactive Machines Lab design system: Night theme.
+ *
+ * The design system assigns Night to the web: a black ground, white type,
+ * white 2 px rules and one lime accent per view. Values are copied from the
+ * system's tokens.json (Night column). Change them there first, then here.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Colour */
+  --paper: #000000;        /* page ground */
+  --ink: #ffffff;          /* text, rules, outlines */
+  --ink-muted: #9a9aa1;    /* secondary text only: captions, meta, footers */
+  --on-ink: #000000;       /* text on an ink fill */
+  --fill-1: #141417;       /* card surface */
+  --fill-2: #1e1e23;       /* photo placeholders, code */
+  --fill-3: #29292f;       /* deepest tint */
+  --surface-deep: #050505; /* a band set back from the page (footer) */
+  --hairline: #303037;     /* 1 px dividers inside a card, table rules */
+  --mark-ground: #000000;  /* ground of the IML mark and any lime block */
+  --lime: #d9ff00;         /* the one accent per view */
+  --on-lime: #000000;      /* text on lime */
+
+  /* Type families */
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-label: "Space Mono", "JetBrains Mono", "Courier New", monospace;
+
+  /* Line */
+  --stroke-rule: 2px;            /* title rules, card and button outlines, image frames */
+  --stroke-hairline-screen: 1px; /* dividers inside a card */
+  --radius-0: 0;                 /* every corner */
+
+  /* Web spacing (slide tokens scaled to a 1200 px column) */
+  --gutter: clamp(16px, 4vw, 48px);
+  --gap: 24px;
+  --card-pad: 24px;
+  --section-gap: clamp(56px, 8vw, 96px);
+  --max-width: 1200px;
+  --measure: 70ch;
+}

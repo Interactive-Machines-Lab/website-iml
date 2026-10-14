@@ -1,108 +1,69 @@
 <style>
+    /* Folder image gallery, IML Night theme. Images (logos, sponsor marks,
+       workshop photos) keep their own white ground inside a 2 px ink frame. */
     .image-gallery {
-        overflow: auto; 
-        margin-left: -2%!important;
         display: flex;
         flex-wrap: wrap;
+        gap: var(--gap, 24px);
         list-style: none;
+        margin: 0 0 20px;
         padding: 0;
-        --selection-background: transparent;
     }
-    
+
     .image-gallery li {
-        float: none;
-        display: block; 
-        margin: 2% 0% 0% 2%;
-        box-sizing: border-box;
-        --selection-background: transparent;
+        flex: 0 1 auto;
+        min-width: 140px;
+        margin: 0;
     }
-    
+
     .image-gallery li a {
-        text-align: center; 
-        text-decoration: none!important; 
-        color: #3b3b3b;
         display: block;
         height: 100%;
-        --base-color: #fafafa;
+        color: var(--ink);
+        text-decoration: none;
+        border: var(--stroke-rule, 2px) solid var(--ink);
+        background: var(--fill-1);
     }
-    
+
     .image-gallery li a:hover {
-        color: #3b3b3b;
-        --base-color: #ffffff;
+        background: var(--ink);
+        color: var(--on-ink);
     }
-    
-    .image-gallery li a:focus {
-        color: #3b3b3b;
-        --base-color: #ffffff;
-    }
-    
+
     .image-gallery li a span {
-        display: block; 
-        text-overflow: ellipsis; 
-        overflow: hidden; 
-        white-space: nowrap; 
-        padding: 3px 0;
-        color: #3b3b3b;
-        --base-color: #3b3b3b;
+        display: block;
+        padding: 8px 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
     }
-    
-    .image-gallery li a:hover span {
-        color: #3b3b3b;
-        --base-color: #3b3b3b;
-    }
-    
-    .image-gallery li a:focus span {
-        color: #3b3b3b;
-        --base-color: #3b3b3b;
-    }
-    
+
     .image-gallery li a img {
-        width: 100%; 
+        width: 100%;
         height: auto;
-        display: block; 
+        display: block;
         object-fit: contain;
         background: #ffffff;
         min-height: 120px;
-        border: 1px solid transparent;
-        transition: border-color 0.2s ease;
+        margin: 0;
+        border: 0;
     }
-    
-    /* Subtle corner line animation on hover for linked images */
-    .image-gallery li a[href]:not([href="#"]):not([href=""]):hover img {
-        border-color: #3b3b3b;
+
+    .image-gallery li a span:not(:first-child) {
+        border-top: var(--stroke-rule, 2px) solid var(--ink);
     }
-    
-    /* Custom size support */
-    .image-gallery--small img {
-        max-height: 100px;
-        object-fit: contain;
-        background: #ffffff;
-        min-height: 80px;
-        --selection-background: transparent;
-    }
-    
-    .image-gallery--medium img {
-        max-height: 150px;
-        object-fit: contain;
-        background: #ffffff;
-        min-height: 120px;
-        --selection-background: transparent;
-    }
-    
-    .image-gallery--large img {
-        max-height: 200px;
-        object-fit: contain;
-        background: #ffffff;
-        min-height: 160px;
-        --selection-background: transparent;
-    }
-    
-    .image-gallery--xlarge img {
-        max-height: 300px;
-        object-fit: contain;
-        background: #ffffff;
-        min-height: 240px;
-        --selection-background: transparent;
+
+    .image-gallery--small img  { max-height: 100px; min-height: 80px; }
+    .image-gallery--medium img { max-height: 150px; min-height: 120px; }
+    .image-gallery--large img  { max-height: 200px; min-height: 160px; }
+    .image-gallery--xlarge img { max-height: 300px; min-height: 240px; }
+
+    @media (max-width: 600px) {
+        .image-gallery li { flex-basis: calc(50% - 12px); }
     }
 </style>
 

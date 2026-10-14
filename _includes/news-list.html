@@ -1,0 +1,29 @@
+{%- comment -%}
+  List of news posts, newest first (styles in _sass/base.scss).
+  A news post is any post in _posts/ with `categories: [news]`.
+  Parameters:
+  - limit: show only the newest N posts (optional)
+  - empty_text: shown when there is no news (default: "No news yet.")
+{%- endcomment -%}
+{%- assign news_posts = site.categories.news -%}
+{%- if include.limit -%}
+  {%- assign news_posts = news_posts | slice: 0, include.limit -%}
+{%- endif -%}
+{%- if news_posts and news_posts.size > 0 -%}
+<ol class="news-list">
+{%- for post in news_posts %}
+<li class="news-item{% if post.thumbnail %} news-item--thumb{% endif %}">
+<time class="news-item__date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d %b %Y" }}</time>
+<div class="news-item__main">
+<h2 class="news-item__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+<p class="news-item__excerpt">{{ post.excerpt | strip_html | strip | truncate: 220 }}</p>
+</div>
+{%- if post.thumbnail %}
+<a class="news-item__thumb frame" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ post.thumbnail | relative_url }}" alt="" loading="lazy"></a>
+{%- endif %}
+</li>
+{%- endfor %}
+</ol>
+{%- else -%}
+<p class="empty">{{ include.empty_text | default: "No news yet." }}</p>
+{%- endif -%}

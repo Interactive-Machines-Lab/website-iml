@@ -5,8 +5,6 @@ excerpt: "Large Delta Manufacturing (LDM) extruder for robotic 3D printing, capa
 layout: wiki-item
 ---
 
-# Wasp LDM Extruder End Effector
-
 ## Specifications
 
 - **Nozzle Diameter**: 0.8mm, 1.2mm, 2mm options

@@ -5,8 +5,6 @@ excerpt: "High-quality FDM 3D printer with 250x210x200mm build volume and automa
 layout: wiki-item
 ---
 
-# Prusa i3 MK3S+ 3D Printer
-
 ## Specifications
 
 - **Build Volume**: 250×210×200mm
